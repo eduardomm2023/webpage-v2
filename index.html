@@ -1,0 +1,731 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Eduardo Martínez Martín — Data Analyst especializado en Salud, Deporte y Educación. Blockchain aplicado al mundo real. +25 años de experiencia sectorial.">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <!-- Performance & SEO -->
+  <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+  <link rel="preconnect" href="https://eduardomm2023.github.io">
+  <link rel="dns-prefetch" href="https://www.linkedin.com">
+  <link rel="dns-prefetch" href="https://github.com">
+  <meta name="theme-color" content="#0F172A">
+  <meta property="og:title" content="Eduardo Martínez — Data Analyst | Salud · Deporte · Educación · Blockchain">
+  <meta property="og:description" content="Data Analyst con 25 años de experiencia en salud, deporte y educación. Blockchain aplicado al mundo real. Madrid.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://eduardomm2023.github.io/webpage-v2/">
+  <title>Eduardo Martínez — Data Analyst | Salud · Deporte · Educación · Blockchain</title>
+  <script ></script>
+  <style>
+    /* ── RESET & BASE ── */
+    * { box-sizing: border-box; font-family: 'Segoe UI', sans-serif; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+
+    /* ── MENÚ ── */
+    .contenedor-header { background: #111827; position: fixed; width: 100%; top: 0; left: 0; z-index: 99; box-shadow: 0 2px 12px rgba(0,0,0,.5); }
+    .contenedor-header header { max-width: 1100px; margin: auto; display: flex; justify-content: space-between; align-items: center; padding: 14px 20px; }
+    .contenedor-header header .logo a { font-size: 17px; color: #2563EB; text-decoration: none; font-weight: 700; letter-spacing: .5px; white-space: nowrap; }
+    .contenedor-header header .logo a .marca { color: #93C5FD; font-weight: 400; }
+    .contenedor-header header ul { display: flex; list-style: none; }
+    .contenedor-header header nav ul li a { color: #CBD5E1; margin: 0 9px; padding: 4px 0; transition: .3s; text-decoration: none; font-size: 12px; font-weight: 600; letter-spacing: .3px; text-transform: uppercase; }
+    .contenedor-header header nav ul li a:hover { color: #2563EB; }
+    .nav-responsive { background-color: #2563EB; color: #fff; padding: 6px 12px; border-radius: 6px; cursor: pointer; display: none; }
+
+    /* ── HERO ── */
+    .inicio { background: linear-gradient(135deg, #0F172A 0%, #1A2E4A 100%); height: 100vh; color: #F8FAFC; display: flex; align-items: center; justify-content: center; }
+    .inicio .contenido-banner { padding: 40px 36px; background: rgba(30,40,60,.85); max-width: 420px; margin: auto; text-align: center; border-radius: 20px; border: 1px solid rgba(37,99,235,.3); backdrop-filter: blur(8px); }
+    .inicio .contenido-banner img { border: 5px solid #2563EB; display: block; width: 150px; height: 150px; object-fit: cover; margin: 0 auto 24px; border-radius: 50%; }
+    .inicio .contenido-banner h1 { font-size: 32px; font-weight: 800; letter-spacing: 2px; margin-bottom: 8px; }
+    .inicio .contenido-banner h2 { font-size: 15px; font-weight: 400; color: #93C5FD; line-height: 1.5; margin-bottom: 6px; }
+    .inicio .tagline { display: inline-block; background: #2563EB; color: #fff; font-size: 12px; font-weight: 700; padding: 4px 14px; border-radius: 20px; margin: 12px 0 24px; letter-spacing: .5px; }
+    .inicio .sectores { display: flex; flex-wrap: wrap; gap: 8px; justify-content: center; margin-bottom: 24px; }
+    .inicio .sectores span { background: rgba(37,99,235,.2); border: 1px solid rgba(37,99,235,.4); color: #93C5FD; font-size: 11px; font-weight: 600; padding: 4px 10px; border-radius: 12px; }
+    .inicio .contenido-banner .redes a { color: #F8FAFC; display: inline-block; text-decoration: none; border: 1px solid rgba(248,250,252,.3); border-radius: 50%; width: 42px; height: 42px; line-height: 42px; margin: 0 4px; font-size: 18px; transition: .3s; }
+    .inicio .contenido-banner .redes a:hover { background-color: #2563EB; border-color: #2563EB; }
+    .btn-cta { display: inline-block; margin-top: 20px; padding: 12px 28px; background: #2563EB; color: #fff; border-radius: 8px; text-decoration: none; font-weight: 700; font-size: 14px; transition: .3s; }
+    .btn-cta:hover { background: #1D4ED8; }
+
+    /* ── SECCIONES GENÉRICAS ── */
+    .contenido-seccion { max-width: 1100px; margin: auto; }
+    section h2 { font-size: 40px; text-align: center; padding: 20px 0 30px; }
+
+    /* ── SOBRE MÍ ── */
+    .sobremi { background-color: #111827; color: #F8FAFC; padding: 80px 20px; }
+    .sobremi h2 { color: #F8FAFC; }
+    .sobremi .propuesta { background: rgba(37,99,235,.1); border-left: 4px solid #2563EB; padding: 20px 24px; border-radius: 0 12px 12px 0; margin-bottom: 32px; font-size: 16px; line-height: 1.7; color: #CBD5E1; }
+    .sobremi .propuesta strong { color: #93C5FD; }
+    .sobremi .ventajas { display: flex; flex-wrap: wrap; gap: 16px; margin-bottom: 32px; }
+    .sobremi .ventaja-card { flex: 1 1 220px; background: #1E293B; border-radius: 12px; padding: 20px; border-top: 3px solid #2563EB; }
+    .sobremi .ventaja-card i { color: #2563EB; font-size: 22px; margin-bottom: 10px; }
+    .sobremi .ventaja-card h4 { font-size: 14px; color: #F8FAFC; margin-bottom: 6px; }
+    .sobremi .ventaja-card p { font-size: 13px; color: #94A3B8; line-height: 1.5; }
+    .sobremi .fila { display: flex; flex-wrap: wrap; gap: 32px; margin-top: 32px; }
+    .sobremi .fila .col { flex: 1 1 45%; }
+    .sobremi .fila .col h3 { font-size: 20px; color: #2563EB; margin-bottom: 16px; }
+    .sobremi .fila .col ul { list-style: none; }
+    .sobremi .fila .col ul li { margin: 10px 0; font-size: 15px; color: #CBD5E1; }
+    .sobremi .fila .col ul li strong { color: #2563EB; margin-right: 8px; }
+    .sobremi .contenedor-intereses { display: flex; flex-wrap: wrap; gap: 10px; }
+    .sobremi .interes { width: 90px; height: 90px; background: #1E293B; border-radius: 10px; display: flex; flex-direction: column; align-items: center; justify-content: center; transition: .3s; cursor: pointer; }
+    .sobremi .interes:hover { background: #2563EB; }
+    .sobremi .interes i { font-size: 24px; margin-bottom: 6px; }
+    .sobremi .interes span { font-size: 10px; font-weight: 600; text-align: center; }
+    .sobremi button { cursor: pointer; background: transparent; border: 2px solid #2563EB; color: #2563EB; padding: 12px 28px; font-size: 15px; font-weight: 700; border-radius: 8px; display: block; margin: 32px auto 0; transition: .3s; }
+    .sobremi button:hover { background: #2563EB; color: #fff; }
+
+    /* ── SERVICIOS (nueva sección) ── */
+    .servicios { background: #0F172A; color: #F8FAFC; padding: 80px 20px; }
+    .servicios h2 { color: #F8FAFC; }
+    .servicios .intro { text-align: center; color: #94A3B8; font-size: 16px; max-width: 650px; margin: 0 auto 48px; line-height: 1.7; }
+    .servicios .grid { display: flex; flex-wrap: wrap; gap: 20px; justify-content: center; }
+    .svc-card { flex: 1 1 230px; max-width: 260px; background: #1E293B; border-radius: 14px; padding: 24px 20px; border-top: 3px solid var(--accent); transition: transform .2s, box-shadow .2s; }
+    .svc-card:hover { transform: translateY(-4px); box-shadow: 0 8px 30px rgba(37,99,235,.2); }
+    .svc-card .sector { font-size: 10px; font-weight: 700; letter-spacing: 1px; color: var(--accent); text-transform: uppercase; margin-bottom: 10px; }
+    .svc-card h4 { font-size: 15px; color: #F8FAFC; margin-bottom: 8px; }
+    .svc-card p { font-size: 12px; color: #94A3B8; line-height: 1.5; margin-bottom: 12px; }
+    .svc-card .precio { font-size: 13px; font-weight: 700; color: #34D399; }
+    .svc-card.deporte { --accent: #EF4444; }
+    .svc-card.educacion { --accent: #F59E0B; }
+    .svc-card.salud { --accent: #2563EB; }
+    .svc-card.blockchain { --accent: #8B5CF6; }
+    .servicios .cta-box { text-align: center; margin-top: 48px; }
+    .servicios .cta-box p { color: #94A3B8; margin-bottom: 16px; font-size: 15px; }
+    .btn-primary { display: inline-block; padding: 14px 32px; background: #2563EB; color: #fff; border-radius: 8px; text-decoration: none; font-weight: 700; font-size: 15px; transition: .3s; }
+    .btn-primary:hover { background: #1D4ED8; }
+
+    /* ── HABILIDADES ── */
+    .skills { background-color: #111827; color: #F8FAFC; padding: 80px 20px; }
+    .skills h2 { color: #F8FAFC; }
+    .skills .fila { display: flex; flex-wrap: wrap; gap: 32px; }
+    .skills .fila .col { flex: 1 1 45%; padding: 0 10px; }
+    .skills .fila .col h3 { font-size: 20px; color: #2563EB; margin-bottom: 24px; }
+    .skills .skill > span { font-weight: 700; display: block; margin-bottom: 8px; font-size: 14px; color: #CBD5E1; }
+    .skills .skill .barra-skill { height: 8px; background: #1E293B; position: relative; margin-bottom: 28px; border-radius: 4px; }
+    .skills .skill .progreso { background: linear-gradient(90deg,#2563EB,#7C3AED); position: absolute; top: 0; left: 0; height: 8px; border-radius: 4px; transition: width 1.2s ease; }
+    .skills .skill .barra-skill .label { position: absolute; right: 0; top: -22px; font-size: 12px; font-weight: 700; color: #2563EB; }
+    /* skill widths */
+    .skills .skill .powerbi    { animation: 1.2s powerbi    forwards; }
+    .skills .skill .python     { animation: 1.2s python     forwards; }
+    .skills .skill .sql        { animation: 1.2s sql        forwards; }
+    .skills .skill .blockchain2{ animation: 1.2s blockchain2 forwards; }
+    .skills .skill .htmlcss    { animation: 1.2s htmlcss    forwards; }
+    .skills .skill .trabajo    { animation: 1.2s trabajo    forwards; }
+    .skills .skill .comunicacion{ animation: 1.2s comunicacion forwards; }
+    .skills .skill .dedicacion { animation: 1.2s dedicacion  forwards; }
+    .skills .skill .adaptabilidad{ animation: 1.2s adaptabilidad forwards; }
+    .skills .skill .sectorial  { animation: 1.2s sectorial  forwards; }
+    @keyframes powerbi      { to { width: 75%; } }
+    @keyframes python       { to { width: 55%; } }
+    @keyframes sql          { to { width: 65%; } }
+    @keyframes blockchain2  { to { width: 70%; } }
+    @keyframes htmlcss      { to { width: 85%; } }
+    @keyframes trabajo      { to { width: 95%; } }
+    @keyframes comunicacion { to { width: 95%; } }
+    @keyframes dedicacion   { to { width: 90%; } }
+    @keyframes adaptabilidad{ to { width: 100%; } }
+    @keyframes sectorial    { to { width: 100%; } }
+
+    /* ── CURRICULUM ── */
+    .curriculum { background-color: #0F172A; color: #F8FAFC; padding: 80px 20px; }
+    .curriculum h2 { color: #F8FAFC; }
+    .curriculum .fila { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 20px; }
+    .curriculum .fila .col { width: 48%; padding: 0 16px; }
+    .curriculum .fila .col h3 { font-size: 20px; color: #2563EB; margin-bottom: 24px; }
+    .curriculum .fila .izquierda { border-right: 2px solid #1E293B; }
+    .curriculum .fila .derecha  { border-left:  2px solid #1E293B; }
+    .curriculum .fila .item { padding: 18px 20px; margin-bottom: 20px; background: #1E293B; border-radius: 10px; position: relative; }
+    .curriculum .fila .item h4 { font-size: 14px; font-weight: 700; margin-bottom: 6px; color: #F8FAFC; }
+    .curriculum .fila .item .casa { color: #2563EB; font-size: 13px; font-weight: 600; display: block; margin-bottom: 2px; }
+    .curriculum .fila .item .fecha { display: block; color: #F59E0B; font-size: 12px; margin-bottom: 8px; }
+    .curriculum .fila .item p { font-size: 13px; line-height: 1.6; color: #94A3B8; }
+    .curriculum .fila .item .conectori { height: 2px; background: #2563EB; width: 40px; position: absolute; top: 50%; right: -40px; }
+    .curriculum .fila .item .conectori .circuloi { display: block; height: 10px; width: 10px; border-radius: 50%; background: #2563EB; float: right; position: relative; bottom: 4px; }
+    .curriculum .fila .item .conectord { height: 2px; background: #2563EB; width: 40px; position: absolute; top: 50%; left: -40px; }
+    .curriculum .fila .item .conectord .circulod { display: block; height: 10px; width: 10px; border-radius: 50%; background: #2563EB; float: left; position: relative; bottom: 4px; }
+
+    /* ── PORTFOLIO ── */
+    .portfolio { background-color: #111827; color: #F8FAFC; padding: 80px 20px; }
+    .portfolio h2 { color: #F8FAFC; }
+    .portfolio .galeria { display: flex; flex-wrap: wrap; justify-content: center; gap: 20px; }
+    .portfolio .proyecto { position: relative; width: 320px; border-radius: 12px; overflow: hidden; cursor: pointer; border: 1px solid #1E293B; }
+    .portfolio .proyecto img { width: 100%; display: block; }
+    .portfolio .proyecto .overlay { position: absolute; top: 0; width: 100%; height: 100%; text-align: center; background: linear-gradient(rgba(37,99,235,.9), rgba(37,99,235,.9)); display: flex; flex-direction: column; justify-content: center; padding: 20px; transition: .4s; opacity: 0; }
+    .portfolio .proyecto:hover .overlay { opacity: 1; }
+    .portfolio .proyecto .overlay h3 { font-size: 15px; margin-bottom: 8px; color: #fff; }
+    .portfolio .proyecto .overlay .tags { display: flex; flex-wrap: wrap; gap: 6px; justify-content: center; margin-bottom: 12px; }
+    .portfolio .proyecto .overlay .tags span { background: rgba(255,255,255,.2); color: #fff; font-size: 10px; padding: 2px 8px; border-radius: 10px; }
+    .portfolio .proyecto .overlay p { font-size: 12px; color: #BFDBFE; line-height: 1.5; margin-bottom: 12px; }
+    .portfolio .proyecto .overlay a { color: #fff; font-size: 12px; font-weight: 700; text-decoration: underline; }
+
+    /* ── CONTACTO ── */
+    .contacto { background: #0F172A; color: #F8FAFC; padding: 80px 20px; }
+    .contacto h2 { color: #F8FAFC; }
+    .contacto .fila { display: flex; flex-wrap: wrap; gap: 40px; justify-content: center; }
+    .contacto .col { flex: 1 1 380px; max-width: 480px; }
+    .contacto .col input, .contacto .col textarea { display: block; width: 100%; padding: 14px 16px; border: 1px solid #1E293B; margin-bottom: 16px; background: #1E293B; color: #F8FAFC; font-size: 15px; border-radius: 8px; outline: none; transition: border .3s; }
+    .contacto .col input:focus, .contacto .col textarea:focus { border-color: #2563EB; }
+    .contacto button { cursor: pointer; background: #2563EB; border: none; color: #fff; padding: 14px 32px; font-size: 15px; font-weight: 700; border-radius: 8px; transition: .3s; }
+    .contacto button:hover { background: #1D4ED8; }
+    .contacto .info-card { background: #1E293B; border-radius: 14px; padding: 32px; }
+    .contacto .info-card h3 { font-size: 20px; margin-bottom: 24px; color: #93C5FD; }
+    .contacto .info-card ul { list-style: none; }
+    .contacto .info-card ul li { margin-bottom: 18px; font-size: 15px; display: flex; align-items: center; gap: 12px; color: #CBD5E1; }
+    .contacto .info-card ul li i { color: #2563EB; width: 20px; }
+    .contacto .info-card .aviso { margin-top: 24px; font-size: 12px; color: #64748B; background: #0F172A; padding: 12px; border-radius: 8px; }
+
+    /* ── FOOTER ── */
+    footer { background: #020617; color: #F8FAFC; padding: 48px 20px 28px; text-align: center; position: relative; }
+    footer .redes { margin-bottom: 20px; }
+    footer .redes a { color: #F8FAFC; display: inline-block; text-decoration: none; border: 1px solid rgba(248,250,252,.3); border-radius: 50%; width: 40px; height: 40px; line-height: 40px; margin: 0 4px; font-size: 18px; transition: .3s; }
+    footer .redes a:hover { background: #2563EB; border-color: #2563EB; }
+    footer p { font-size: 13px; color: #475569; }
+    footer .arriba { display: block; width: 48px; height: 48px; background: #2563EB; color: #fff; position: absolute; left: 50%; transform: translateX(-50%); top: -24px; border-radius: 50%; line-height: 48px; font-size: 18px; text-decoration: none; }
+
+    /* ── RESPONSIVE ── */
+    @media screen and (max-width:980px) {
+      nav { display: none; }
+      .nav-responsive { display: block; }
+      nav.responsive { display: block; position: absolute; right: 0; top: 68px; background: #1E293B; width: 200px; border-radius: 0 0 0 12px; }
+      nav.responsive ul { display: block !important; }
+      nav.responsive ul li { border-bottom: 1px solid #374151; padding: 10px 16px; }
+    }
+    @media screen and (max-width:700px) {
+      .sobremi .fila, .skills .fila, .curriculum .fila { display: block; }
+      .sobremi .fila .col, .skills .fila .col, .curriculum .fila .col { width: 100%; }
+      .curriculum .fila .izquierda { border-right: none; border-bottom: 2px solid #1E293B; padding-bottom: 20px; }
+      .servicios .grid { flex-direction: column; align-items: center; }
+      .svc-card { max-width: 100%; }
+    }
+  </style>
+
+    <style>@font-face{font-display:swap;}</style>
+</head>
+<body>
+
+  <!-- M E N Ú -->
+  <div class="contenedor-header">
+    <header>
+      <div class="logo">
+        <a href="#inicio">Eduardo Martínez <span class="marca">· Your Time</span></a>
+      </div>
+      <nav id="nav">
+        <ul>
+          <li><a href="#inicio"    onclick="seleccionar()">INICIO</a></li>
+          <li><a href="#sobremi"   onclick="seleccionar()">SOBRE MÍ</a></li>
+          <li><a href="#servicios" onclick="seleccionar()">SERVICIOS</a></li>
+          <li><a href="#skills"    onclick="seleccionar()">HABILIDADES</a></li>
+          <li><a href="#curriculum" onclick="seleccionar()">CURRICULUM</a></li>
+          <li><a href="#portfolio" onclick="seleccionar()">PORTFOLIO</a></li>
+          <li><a href="#contacto"  onclick="seleccionar()">CONTACTO</a></li>
+          <li><a href="https://www.kaggle.com/" target="_blank" rel="noopener">KAGGLE</a></li>
+        </ul>
+      </nav>
+      <div class="nav-responsive" onclick="mostrarOcultarMenu()">
+        <i class="fa-solid fa-bars"></i>
+      </div>
+    </header>
+  </div>
+
+  <!-- H E R O -->
+  <section id="inicio" class="inicio">
+    <div class="contenido-banner">
+      <img src="https://eduardomm2023.github.io/webpage/imagenes/yo/yo-01.jpg" width="150" height="150" fetchpriority="high" alt="Eduardo Martínez Martín — Data Analyst">
+      <h1>EDUARDO MARTÍNEZ</h1>
+      <h2>Data Analyst · Salud · Deporte · Educación</h2>
+      <span class="tagline">Blockchain aplicado al mundo real</span>
+      <div class="sectores">
+        <span>📊 Power BI</span>
+        <span>🐍 Python</span>
+        <span>⛓️ Blockchain</span>
+        <span>🏥 Salud</span>
+        <span>🏃 Deporte</span>
+        <span>🏫 Educación</span>
+      </div>
+      <div class="redes">
+        <a href="https://www.linkedin.com/in/eduardo-martinez-martin" target="_blank" title="LinkedIn" rel="noopener"><i class="fa-brands fa-linkedin"></i></a>
+        <a href="https://github.com/eduardomm2023" target="_blank" title="GitHub" rel="noopener"><i class="fa-brands fa-github"></i></a>
+        <a href="https://sites.google.com/view/miportfolio1975" target="_blank" title="Google Site Portfolio" rel="noopener"><i class="fa-solid fa-briefcase"></i></a>
+      </div>
+      <a href="#servicios" class="btn-cta">Ver mis servicios →</a>
+    </div>
+  </section>
+
+  <!-- S O B R E   M Í -->
+  <section id="sobremi" class="sobremi">
+    <div class="contenido-seccion">
+      <h2>Sobre Mí</h2>
+
+      <div class="propuesta">
+        Soy <strong>Data Analyst con más de 25 años de experiencia real</strong> en salud, deporte y educación,
+        combinada con formación técnica sólida en análisis de datos, Python, Machine Learning e Inteligencia Artificial.
+        Ayudo a clubs deportivos, centros educativos, clínicas y empresas a tomar
+        <strong>decisiones inteligentes basadas en sus datos</strong>. También asesoro en la aplicación
+        práctica de <strong>tecnología Blockchain</strong> en sectores tradicionales.
+      </div>
+
+      <div class="ventajas">
+        <div class="ventaja-card">
+          <i class="fa-solid fa-chart-line"></i>
+          <h4>Experiencia sectorial real</h4>
+          <p>25+ años en salud, deporte y educación. Entiendo el negocio desde dentro, no solo los datos.</p>
+        </div>
+        <div class="ventaja-card">
+          <i class="fa-solid fa-brain"></i>
+          <h4>Stack técnico actualizado</h4>
+          <p>Python · Power BI · SQL · Machine Learning · IA · Blockchain. Máster + 3.000h de formación tecnológica.</p>
+        </div>
+        <div class="ventaja-card">
+          <i class="fa-solid fa-handshake"></i>
+          <h4>Comunicación ejecutiva</h4>
+          <p>Traduzco datos complejos en decisiones concretas. Inglés C1 · experiencia internacional en 35 países.</p>
+        </div>
+        <div class="ventaja-card">
+          <i class="fa-brands fa-ethereum"></i>
+          <h4>Blockchain aplicado</h4>
+          <p>Formación en Solidity, EVM y Foundry. Asesoramiento en tokenización y casos de uso reales.</p>
+        </div>
+      </div>
+
+      <div class="fila">
+        <div class="col">
+          <h3>Datos Profesionales</h3>
+          <ul>
+            <li><strong>Especialización:</strong> Data Analytics · Blockchain</li>
+            <li><strong>Sectores:</strong> Salud · Deporte · Educación · Economía</li>
+            <li><strong>Idiomas:</strong> Español (nativo) · Inglés C1</li>
+            <li><strong>Modalidad:</strong> Freelance · Consultoría · Formación</li>
+            <li><strong>Ubicación:</strong> Madrid · Disponible remoto</li>
+            <li><strong>Tarifa:</strong> 45–65€/hora · Proyectos cerrados</li>
+          </ul>
+        </div>
+        <div class="col">
+          <h3>Intereses</h3>
+          <div class="contenedor-intereses">
+            <div class="interes"><a href="https://www.cadena100.es/musica" target="_blank" rel="noopener" style="color:inherit;text-decoration:none;display:flex;flex-direction:column;align-items:center;"><i class="fa-solid fa-headphones"></i><span>MÚSICA</span></a></div>
+            <div class="interes"><a href="https://www.lavueltaalmundo.net/" target="_blank" rel="noopener" style="color:inherit;text-decoration:none;display:flex;flex-direction:column;align-items:center;"><i class="fa-solid fa-plane"></i><span>VIAJES</span></a></div>
+            <div class="interes"><a href="https://www.youtube.com/@JimKwik" target="_blank" rel="noopener" style="color:inherit;text-decoration:none;display:flex;flex-direction:column;align-items:center;"><i class="fa-solid fa-user-graduate"></i><span>EDUCACIÓN</span></a></div>
+            <div class="interes"><a href="https://www.youtube.com/@AlexCrockford" target="_blank" rel="noopener" style="color:inherit;text-decoration:none;display:flex;flex-direction:column;align-items:center;"><i class="fa-regular fa-heart"></i><span>SALUD</span></a></div>
+            <div class="interes"><a href="https://www.youtube.com/watch?v=lbwK7kLjm4Y" target="_blank" rel="noopener" style="color:inherit;text-decoration:none;display:flex;flex-direction:column;align-items:center;"><i class="fa-brands fa-ethereum"></i><span>BLOCKCHAIN</span></a></div>
+            <div class="interes"><a href="https://eduardomm2023.github.io/webpage/docs/MIS%20IMPERDIBLOS.pdf" target="_blank" rel="noopener" style="color:inherit;text-decoration:none;display:flex;flex-direction:column;align-items:center;"><i class="fa-solid fa-book-open-reader"></i><span>LIBROS</span></a></div>
+            <div class="interes"><a href="https://www.youtube.com/watch?v=R5z5tiKtTs8/" target="_blank" rel="noopener" style="color:inherit;text-decoration:none;display:flex;flex-direction:column;align-items:center;"><i class="fa-solid fa-bowl-food"></i><span>COCINA</span></a></div>
+            <div class="interes"><a href="https://www.youtube.com/@memoflores74" target="_blank" rel="noopener" style="color:inherit;text-decoration:none;display:flex;flex-direction:column;align-items:center;"><i class="fa-solid fa-camera"></i><span>FOTO</span></a></div>
+          </div>
+        </div>
+      </div>
+
+      <button onclick="window.open('docs/CV + CV TECNO-2024.pdf','_blank')">
+        Descargar CV Tecnológico <i class="fa-solid fa-download"></i>
+      </button>
+    </div>
+  </section>
+
+  <!-- S E R V I C I O S -->
+  <section id="servicios" class="servicios">
+    <div class="contenido-seccion">
+      <h2>Servicios</h2>
+      <p class="intro">Combino 25 años de experiencia sectorial con herramientas de análisis de datos y Blockchain para ofrecer soluciones que realmente entienden tu negocio.</p>
+
+      <div class="grid">
+        <!-- DEPORTE -->
+        <div class="svc-card deporte">
+          <div class="sector">🏃 Deporte</div>
+          <h4>Dashboard de Rendimiento Deportivo</h4>
+          <p>KPIs de jugadores, cargas de entrenamiento y lesiones con Power BI + Python.</p>
+          <div class="precio">1.500 – 3.500€</div>
+        </div>
+        <div class="svc-card deporte">
+          <div class="sector">🏃 Deporte</div>
+          <h4>Análisis de Scouting y Captación</h4>
+          <p>Identificación de patrones en perfiles, comparativas estadísticas e informes predictivos.</p>
+          <div class="precio">800 – 2.000€</div>
+        </div>
+        <div class="svc-card deporte">
+          <div class="sector">🏃 Deporte</div>
+          <h4>Consultoría Datos Instalaciones</h4>
+          <p>Optimización de ocupación, rentabilidad y recursos para gimnasios, piscinas y pádel.</p>
+          <div class="precio">1.200 – 2.800€</div>
+        </div>
+
+        <!-- EDUCACIÓN -->
+        <div class="svc-card educacion">
+          <div class="sector">🏫 Educación</div>
+          <h4>Dashboard Seguimiento Académico</h4>
+          <p>Rendimiento por alumno, grupo y docente. Detección temprana de abandono escolar.</p>
+          <div class="precio">1.200 – 2.500€</div>
+        </div>
+        <div class="svc-card educacion">
+          <div class="sector">🏫 Educación</div>
+          <h4>Formación en Datos para Docentes</h4>
+          <p>Taller de 8–16h sobre toma de decisiones educativas basada en evidencias.</p>
+          <div class="precio">500 – 1.500€</div>
+        </div>
+        <div class="svc-card educacion">
+          <div class="sector">🏫 Educación</div>
+          <h4>Análisis de Impacto Educativo</h4>
+          <p>Medir la efectividad de metodologías y justificar inversiones ante dirección e inspección.</p>
+          <div class="precio">1.500 – 3.000€</div>
+        </div>
+
+        <!-- SALUD -->
+        <div class="svc-card salud">
+          <div class="sector">🏥 Salud</div>
+          <h4>Dashboard de Gestión Clínica</h4>
+          <p>KPIs de pacientes, tiempos de espera y eficiencia por especialidad para clínicas privadas.</p>
+          <div class="precio">1.500 – 4.000€</div>
+        </div>
+        <div class="svc-card salud">
+          <div class="sector">🏥 Salud</div>
+          <h4>Análisis Rendimiento Físico y Preventivo</h4>
+          <p>Datos de wearables, pruebas físicas y analíticas para centros wellness y mutuas.</p>
+          <div class="precio">800 – 2.000€</div>
+        </div>
+        <div class="svc-card salud">
+          <div class="sector">🏥 Salud</div>
+          <h4>Automatización de Informes Clínicos</h4>
+          <p>Reemplazar Excel manual por dashboards automáticos. Ahorro real de horas al equipo.</p>
+          <div class="precio">1.000 – 2.500€</div>
+        </div>
+
+        <!-- BLOCKCHAIN -->
+        <div class="svc-card blockchain">
+          <div class="sector">⛓️ Blockchain</div>
+          <h4>Taller Intro Blockchain para Empresas</h4>
+          <p>Sesión de 4–8h para equipos directivos. Sin código, orientado a casos de uso reales.</p>
+          <div class="precio">600 – 1.500€</div>
+        </div>
+        <div class="svc-card blockchain">
+          <div class="sector">⛓️ Blockchain</div>
+          <h4>Consultoría de Viabilidad Blockchain</h4>
+          <p>Informe: ¿tiene sentido aplicar Blockchain en tu empresa? Entregable concreto.</p>
+          <div class="precio">1.500 – 3.500€</div>
+        </div>
+        <div class="svc-card blockchain">
+          <div class="sector">⛓️ Blockchain</div>
+          <h4>Tokenización de Activos</h4>
+          <p>Asesoramiento en tokenización de membresías, certificados y derechos deportivos o educativos.</p>
+          <div class="precio">2.000 – 5.000€</div>
+        </div>
+      </div>
+
+      <div class="cta-box">
+        <p>¿Tienes un proyecto en mente? Hablemos sin compromiso.</p>
+        <a href="#contacto" class="btn-primary">Contactar ahora</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- H A B I L I D A D E S -->
+  <section class="skills" id="skills">
+    <div class="contenido-seccion">
+      <h2>Habilidades</h2>
+      <div class="fila">
+        <div class="col">
+          <h3>Stack Técnico</h3>
+          <div class="skill">
+            <span>Power BI & Tableau</span>
+            <div class="barra-skill"><div class="progreso powerbi"></div><span class="label">Avanzado</span></div>
+          </div>
+          <div class="skill">
+            <span>Python (Pandas, Matplotlib, Scikit-learn)</span>
+            <div class="barra-skill"><div class="progreso python"></div><span class="label">Intermedio</span></div>
+          </div>
+          <div class="skill">
+            <span>SQL & Bases de datos</span>
+            <div class="barra-skill"><div class="progreso sql"></div><span class="label">Intermedio</span></div>
+          </div>
+          <div class="skill">
+            <span>Blockchain & Solidity</span>
+            <div class="barra-skill"><div class="progreso blockchain2"></div><span class="label">Intermedio</span></div>
+          </div>
+          <div class="skill">
+            <span>HTML, CSS & JavaScript</span>
+            <div class="barra-skill"><div class="progreso htmlcss"></div><span class="label">Avanzado</span></div>
+          </div>
+        </div>
+        <div class="col">
+          <h3>Habilidades Profesionales</h3>
+          <div class="skill">
+            <span>Conocimiento sectorial (salud, deporte, educación)</span>
+            <div class="barra-skill"><div class="progreso sectorial"></div><span class="label">Experto</span></div>
+          </div>
+          <div class="skill">
+            <span>Comunicación & Presentación ejecutiva</span>
+            <div class="barra-skill"><div class="progreso comunicacion"></div><span class="label">Alto</span></div>
+          </div>
+          <div class="skill">
+            <span>Trabajo en equipo & Liderazgo</span>
+            <div class="barra-skill"><div class="progreso trabajo"></div><span class="label">Alto</span></div>
+          </div>
+          <div class="skill">
+            <span>Adaptabilidad & Aprendizaje continuo</span>
+            <div class="barra-skill"><div class="progreso adaptabilidad"></div><span class="label">Máximo</span></div>
+          </div>
+          <div class="skill">
+            <span>Dedicación & Orientación a resultados</span>
+            <div class="barra-skill"><div class="progreso dedicacion"></div><span class="label">Alto</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- C U R R I C U L U M -->
+  <section id="curriculum" class="curriculum">
+    <div class="contenido-seccion">
+      <h2>Curriculum</h2>
+      <div class="fila">
+        <div class="col izquierda">
+          <h3>Formación Tecnológica</h3>
+          <div class="item izq">
+            <h4>Máster en Análisis de Datos · ML · IA · Python</h4>
+            <span class="casa">ATRIUM (500h + 300h prácticas)</span>
+            <span class="fecha">2023 – 2024</span>
+            <p>Análisis y visualización de datos, Machine Learning, Inteligencia Artificial y desarrollo Python.</p>
+            <div class="conectori"><div class="circuloi"></div></div>
+          </div>
+          <div class="item izq">
+            <h4>Blockchain Engineering — Módulos Solidity & Foundry</h4>
+            <span class="casa">Codecrypto Academy</span>
+            <span class="fecha">2024 – Hoy</span>
+            <p>Solidity, EVM, Foundry, smart contracts y tokenización de activos.</p>
+            <div class="conectori"><div class="circuloi"></div></div>
+          </div>
+          <div class="item izq">
+            <h4>Bootcamp de Ciberseguridad (1.000h prácticas)</h4>
+            <span class="casa">The Bridge — Digital Talent Accelerator</span>
+            <span class="fecha">2022 – 2023</span>
+            <p>Seguridad ofensiva y defensiva, redes, OSINT y análisis forense.</p>
+            <div class="conectori"><div class="circuloi"></div></div>
+          </div>
+          <div class="item izq">
+            <h4>Python Full Stack Expert (50h)</h4>
+            <span class="casa">IBM Academy & Bejob</span>
+            <span class="fecha">2024</span>
+            <p>Programación Python aplicada a entornos de producción.</p>
+            <div class="conectori"><div class="circuloi"></div></div>
+          </div>
+          <div class="item izq">
+            <h4>Responsive Web Design Developer (300h)</h4>
+            <span class="casa">FreeCodeCamp</span>
+            <span class="fecha">2023</span>
+            <p>HTML5, CSS3, diseño responsivo y accesibilidad web.</p>
+            <div class="conectori"><div class="circuloi"></div></div>
+          </div>
+          <div class="item izq">
+            <h4>Certificaciones CISCO · FORTINET · INCIBE</h4>
+            <span class="casa">Varios (ver CV tecnológico)</span>
+            <span class="fecha">2022 – 2024</span>
+            <p>Ciberseguridad NSE1–NSE3 · CISCO CyberOps · INCIBE técnico (250h).</p>
+            <div class="conectori"><div class="circuloi"></div></div>
+          </div>
+
+          <h3 style="margin-top:32px;">Formación Académica</h3>
+          <div class="item izq">
+            <h4>Licenciado en Ciencias de la Actividad Física y el Deporte (INEF)</h4>
+            <span class="casa">Universidad Autónoma de Madrid</span>
+            <span class="fecha">2003 – 2005</span>
+            <p></p>
+            <div class="conectori"><div class="circuloi"></div></div>
+          </div>
+          <div class="item izq">
+            <h4>Diplomatura de Magisterio — Primaria y Educación Física</h4>
+            <span class="casa">Universidad Complutense (CES D. Bosco)</span>
+            <span class="fecha">2000 – 2003</span>
+            <p></p>
+            <div class="conectori"><div class="circuloi"></div></div>
+          </div>
+          <div class="item izq">
+            <h4>Advanced English C1 · First B2 · B1</h4>
+            <span class="casa">British Council Madrid</span>
+            <span class="fecha">2012 – 2015</span>
+            <p>Certificados oficiales Cambridge y Oxford.</p>
+            <div class="conectori"><div class="circuloi"></div></div>
+          </div>
+        </div>
+
+        <div class="col derecha">
+          <h3>Experiencia Relevante</h3>
+          <div class="item der">
+            <h4>Data Analyst Freelance — Salud, Deporte y Educación</h4>
+            <span class="casa">Autoempleo · Your Time</span>
+            <span class="fecha">2024 – Hoy</span>
+            <p>Desarrollo de dashboards, análisis de rendimiento deportivo y consultoría de datos para PYMEs y centros educativos.</p>
+            <div class="conectord"><div class="circulod"></div></div>
+          </div>
+          <div class="item der">
+            <h4>Consultor Blockchain</h4>
+            <span class="casa">Freelance · Codecrypto Academy</span>
+            <span class="fecha">2024 – Hoy</span>
+            <p>Desarrollo de contenido formativo para Máster en Blockchain Engineering. Módulos Solidity y Foundry.</p>
+            <div class="conectord"><div class="circulod"></div></div>
+          </div>
+          <div class="item der">
+            <h4>Operador Tecnológico — Juegos Panamericanos 2023</h4>
+            <span class="casa">Bornan Sport S.L.</span>
+            <span class="fecha">2023</span>
+            <p>Gestión y administración de sistemas informáticos en evento deportivo internacional de alto nivel.</p>
+            <div class="conectord"><div class="circulod"></div></div>
+          </div>
+          <div class="item der">
+            <h4>Preparador Físico y Osteópata Deportivo</h4>
+            <span class="casa">Unami C.F. · La Granja C.F. · Rioseco C.F.</span>
+            <span class="fecha">2000 – 2020</span>
+            <p>Preparación física, recuperación deportiva y análisis de rendimiento de equipos de fútbol amateur y semiprofesional.</p>
+            <div class="conectord"><div class="circulod"></div></div>
+          </div>
+          <div class="item der">
+            <h4>Profesor — Educación Física, Inglés y TIC</h4>
+            <span class="casa">Múltiples colegios (Madrid · Segovia)</span>
+            <span class="fecha">2000 – 2022</span>
+            <p>Docencia en Primaria, Secundaria y Bachillerato. Responsable TIC en varios centros. +20 años de experiencia educativa directa.</p>
+            <div class="conectord"><div class="circulod"></div></div>
+          </div>
+          <div class="item der">
+            <h4>CEO · Masajista · Osteópata · Nutricionista Deportivo</h4>
+            <span class="casa">Your Time (empresa propia)</span>
+            <span class="fecha">2000 – Hoy</span>
+            <p>Gestión de empresa de salud deportiva. Especialización en deportistas de alto rendimiento y personas con discapacidad.</p>
+            <div class="conectord"><div class="circulod"></div></div>
+          </div>
+          <div class="item der">
+            <h4>Vuelta al Mundo — Observador Educativo Internacional</h4>
+            <span class="casa">35+ países · 12 meses</span>
+            <span class="fecha">2008 – 2009</span>
+            <p>Visita a escuelas en más de 35 países. Análisis comparativo de sistemas educativos internacionales. Inglés nivel avanzado consolidado.</p>
+            <div class="conectord"><div class="circulod"></div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- P O R T F O L I O -->
+  <section id="portfolio" class="portfolio">
+    <div class="contenido-seccion">
+      <h2>Portfolio</h2>
+      <div class="galeria">
+
+        <div class="proyecto">
+          <img loading="lazy" src="https://eduardomm2023.github.io/webpage/imagenes/proyectos/09_balance_sheet.png" alt="Dashboard Balance Financiero">
+          <div class="overlay">
+            <h3>Dashboard Balance Financiero</h3>
+            <div class="tags"><span>Power BI</span><span>Python</span><span>Economía</span></div>
+            <p>Automatización de balance financiero con visualización interactiva. Reduce horas de trabajo manual.</p>
+            <a href="https://eduardomm2023.github.io/webpage/docs/09-CODIGO-BALANCE-FINANCIERO.pdf" target="_blank" rel="noopener">Ver código →</a>
+          </div>
+        </div>
+
+        <div class="proyecto">
+          <img loading="lazy" src="https://eduardomm2023.github.io/webpage/imagenes/proyectos/06_etiqueta_de_nutricion.png" alt="Análisis Nutricional">
+          <div class="overlay">
+            <h3>Análisis de Etiqueta Nutricional</h3>
+            <div class="tags"><span>Python</span><span>Salud</span><span>Nutrición</span></div>
+            <p>Herramienta de análisis nutricional con cálculo automático de macronutrientes y alertas dietéticas.</p>
+            <a href="https://eduardomm2023.github.io/webpage/docs/06-CODIGO-ETIQUETA-NUTRICION.pdf" target="_blank" rel="noopener">Ver código →</a>
+          </div>
+        </div>
+
+        <div class="proyecto">
+          <img loading="lazy" src="https://eduardomm2023.github.io/webpage/imagenes/proyectos/04_formulario_de_encuesta.png" alt="Encuesta Deportiva">
+          <div class="overlay">
+            <h3>Formulario de Encuesta Deportiva</h3>
+            <div class="tags"><span>HTML/CSS</span><span>Deporte</span><span>UX</span></div>
+            <p>Formulario de recogida de datos de rendimiento deportivo. Diseño accesible y responsivo.</p>
+            <a href="https://eduardomm2023.github.io/webpage/docs/04-CODIGO-ENCUESTA.pdf" target="_blank" rel="noopener">Ver código →</a>
+          </div>
+        </div>
+
+        <div class="proyecto">
+          <img loading="lazy" src="https://eduardomm2023.github.io/webpage/imagenes/proyectos/11_documentacion_tecnica.png" alt="Documentación Técnica">
+          <div class="overlay">
+            <h3>Web de Documentación Técnica</h3>
+            <div class="tags"><span>HTML</span><span>CSS</span><span>Educación</span></div>
+            <p>Portal de documentación técnica estructurado y navegable. Diseño limpio orientado a desarrolladores.</p>
+            <a href="https://eduardomm2023.github.io/webpage/docs/11-CODIGO-PAGINA-DOCUMENTACION.pdf" target="_blank" rel="noopener">Ver código →</a>
+          </div>
+        </div>
+
+        <div class="proyecto">
+          <img loading="lazy" src="https://eduardomm2023.github.io/webpage/imagenes/proyectos/03_registration_formulario.png" alt="Formulario de Registro">
+          <div class="overlay">
+            <h3>Sistema de Registro de Pacientes</h3>
+            <div class="tags"><span>HTML</span><span>CSS</span><span>Salud</span></div>
+            <p>Formulario de alta de pacientes con validación de datos y diseño accesible para clínicas.</p>
+            <a href="https://eduardomm2023.github.io/webpage/docs/03-CODIGO-FORMULARIO-REGISTRO.pdf" target="_blank" rel="noopener">Ver código →</a>
+          </div>
+        </div>
+
+        <div class="proyecto">
+          <img loading="lazy" src="https://eduardomm2023.github.io/webpage/imagenes/proyectos/01_aplicacion_fotos_gatos.png" alt="Aplicación Web Responsiva">
+          <div class="overlay">
+            <h3>Aplicación Web Responsiva</h3>
+            <div class="tags"><span>HTML</span><span>CSS</span><span>FreeCodeCamp</span></div>
+            <p>Primera aplicación web responsiva. Diseño mobile-first con buenas prácticas de accesibilidad.</p>
+            <a href="https://eduardomm2023.github.io/webpage/docs/01-CODIGO-CONSTRUYENDO-APLICACION-FOTOS-GATOS.pdf" target="_blank" rel="noopener">Ver código →</a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- C O N T A C T O -->
+  <section id="contacto" class="contacto">
+    <div class="contenido-seccion">
+      <h2>Contacto</h2>
+      <div class="fila">
+        <div class="col">
+          <input type="text" placeholder="Tu nombre">
+          <input type="email" placeholder="Tu email">
+          <input type="text" placeholder="Asunto (ej: Dashboard para mi club deportivo)">
+          <textarea rows="6" placeholder="Cuéntame tu proyecto o necesidad..."></textarea>
+          <button type="submit">Enviar mensaje <i class="fa-solid fa-paper-plane"></i></button>
+        </div>
+        <div class="col">
+          <div class="info-card">
+            <h3>Hablemos sin compromiso</h3>
+            <ul>
+              <li><i class="fa-solid fa-envelope"></i> yourtime.data@gmail.com</li>
+              <li><i class="fa-brands fa-linkedin"></i> linkedin.com/in/eduardo-martinez-martin</li>
+              <li><i class="fa-brands fa-github"></i> github.com/eduardomm2023</li>
+              <li><i class="fa-solid fa-briefcase"></i> Google Site Portfolio disponible</li>
+              <li><i class="fa-solid fa-clock"></i> Respondo en menos de 24h</li>
+              <li><i class="fa-solid fa-video"></i> Primera reunión gratuita (30 min)</li>
+              <li><i class="fa-solid fa-globe"></i> Madrid · Disponible 100% remoto</li>
+            </ul>
+            <div class="aviso">
+              📌 Para una respuesta más rápida, contacta directamente por LinkedIn o mediante la reunión gratuita de 30 minutos en Calendly.
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- F O O T E R -->
+  <footer>
+    <a href="#inicio" class="arriba"><i class="fa-solid fa-arrow-up"></i></a>
+    <div class="redes">
+      <a href="https://www.linkedin.com/in/eduardo-martinez-martin" target="_blank" title="LinkedIn" rel="noopener"><i class="fa-brands fa-linkedin"></i></a>
+      <a href="https://github.com/eduardomm2023" target="_blank" title="GitHub" rel="noopener"><i class="fa-brands fa-github"></i></a>
+      <a href="https://sites.google.com/view/miportfolio1975" target="_blank" title="Portfolio" rel="noopener"><i class="fa-solid fa-briefcase"></i></a>
+    </div>
+    <p>© 2026 Eduardo Martínez Martín · Data Analyst · Salud · Deporte · Educación · Blockchain</p>
+  </footer>
+
+  <script>
+    function mostrarOcultarMenu() {
+      var nav = document.getElementById("nav");
+      nav.classList.toggle("responsive");
+    }
+    function seleccionar() {
+      var nav = document.getElementById("nav");
+      nav.classList.remove("responsive");
+    }
+  </script>
+
+</body>
+</html>
