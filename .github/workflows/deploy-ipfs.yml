@@ -1,4 +1,4 @@
-name: Deploy Portfolio to IPFS
+name: Deploy Portfolio to IPFS (Direct API)
 
 on:
   push:
@@ -12,12 +12,31 @@ jobs:
       - name: Checkout Code
         uses: actions/checkout@v4
 
-      - name: Deploy to Pinata via IPFS Action
-        uses: aquiladev/ipfs-action@v0.2.4
-        with:
-          host: https://api.pinata.cloud
-          path: './' # Ajusta si tu web está en /docs o /public
-          pinata-key: ${{ secrets.PINATA_API_KEY }}
-          pinata-secret: ${{ secrets.PINATA_SECRET_API_KEY }}
-          pinata-name: 'Portfolio Eduardo MM'
-          verbose: true   
+      - name: Install jq (JSON parser)
+        run: sudo apt-get update && sudo apt-get install -y jq
+
+      - name: Upload to Pinata
+        id: upload
+        run: |
+          echo "Subiendo carpeta actual a Pinata..."
+          RESPONSE=$(curl -s -X POST \
+            -F "file=@." \
+            -H "Authorization: Bearer ${{ secrets.PINATA_JWT }}" \
+            "https://api.pinata.cloud/pinning/pinFileToIPFS")
+          
+          # Extraer el CID (IpfsHash) del JSON de respuesta
+          CID=$(echo $RESPONSE | jq -r '.IpfsHash')
+          
+          if [ "$CID" = "null" ] || [ -z "$CID" ]; then
+            echo "❌ Error al subir. Respuesta de Pinata: $RESPONSE"
+            exit 1
+          fi
+          
+          echo "✅ ¡Éxito! CID obtenido: $CID"
+          echo "CID=$CID" >> $GITHUB_OUTPUT
+
+      - name: Mostrar URL Pública
+        run: |
+          echo "🚀 Tu portfolio Web3 está disponible en:"
+          echo "https://gateway.mypinata.cloud/ipfs/${{ steps.upload.outputs.CID }}"
+          echo "O usa tu dominio .eth/.crypto cuando lo configures."   
