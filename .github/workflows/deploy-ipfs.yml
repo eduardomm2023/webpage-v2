@@ -5,10 +5,6 @@ on:
     branches: [ main, master ]
   workflow_dispatch:
 
-permissions:
-  contents: read
-  id-token: write
-
 jobs:
   deploy:
     runs-on: ubuntu-latest
@@ -16,9 +12,12 @@ jobs:
       - name: Checkout Code
         uses: actions/checkout@v4
 
-      - name: Deploy to Pinata
-        uses: PinataCloud/pinata-github-action@main
+      - name: Deploy to Pinata via IPFS Action
+        uses: aquiladev/ipfs-action@v0.2.4
         with:
-          pinata-jwt: ${{ secrets.PINATA_JWT }}
-          path-to-deploy: './' 
-          pinata-metadata: '{"name": "Portfolio Eduardo MM"}'
+          host: https://api.pinata.cloud
+          path: './' # Ajusta si tu web está en /docs o /public
+          pinata-key: ${{ secrets.PINATA_API_KEY }}
+          pinata-secret: ${{ secrets.PINATA_SECRET_API_KEY }}
+          pinata-name: 'Portfolio Eduardo MM'
+          verbose: true   
