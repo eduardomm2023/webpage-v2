@@ -2,25 +2,23 @@ name: Deploy Portfolio to IPFS
 
 on:
   push:
-    branches: [ main, master ] # Se activa al subir cambios a main o master
-  workflow_dispatch: # Permite activarlo manualmente desde la pestaña Actions
+    branches: [ main, master ]
+  workflow_dispatch:
+
 permissions:
   contents: read
-  id-token: write  # Necesario para autenticaciones externas
+  id-token: write
+
 jobs:
   deploy:
     runs-on: ubuntu-latest
-    
     steps:
       - name: Checkout Code
         uses: actions/checkout@v4
 
       - name: Deploy to Pinata
-        uses: anantaramdas/ipfs-pinata-deploy-action@v1.6.4
+        uses: PinataCloud/pinata-github-action@main
         with:
-          pin-name: "Portfolio Eduardo MM - ${{ github.sha }}"
-          path: './' # Cambia esto a './docs' si tu web está en una carpeta docs
-          pinata-api-key: ${{ secrets.PINATA_API_KEY }} # Opcional si usas JWT
-          pinata-secret-api-key: ${{ secrets.PINATA_SECRET_API_KEY }} # Opcional si usas JWT
-          pinata-jwt: ${{ secrets.PINATA_JWT }} # Usamos JWT
-          verbose: true   
+          pinata-jwt: ${{ secrets.PINATA_JWT }}
+          path-to-deploy: './' 
+          pinata-metadata: '{"name": "Portfolio Eduardo MM"}'
