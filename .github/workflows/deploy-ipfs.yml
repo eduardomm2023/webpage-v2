@@ -1,4 +1,4 @@
-name: Deploy Portfolio to IPFS (Direct API)
+name: Deploy Portfolio to IPFS (Fixed ZIP Method)
 
 on:
   push:
@@ -12,31 +12,37 @@ jobs:
       - name: Checkout Code
         uses: actions/checkout@v4
 
-      - name: Install jq (JSON parser)
+      - name: Install tools
         run: sudo apt-get update && sudo apt-get install -y jq
+
+      - name: Create ZIP of website
+        run: |
+          # Excluimos la carpeta .git y el propio zip si existiera
+          zip -r portfolio.zip . -x "*.git*" "*.github*" "portfolio.zip"
+          echo "✅ Archivo portfolio.zip creado."
 
       - name: Upload to Pinata
         id: upload
         run: |
-          echo "Subiendo carpeta actual a Pinata..."
+          echo "🔄 Subiendo a Pinata..."
           RESPONSE=$(curl -s -X POST \
-            -F "file=@." \
+            -F "file=@portfolio.zip" \
             -H "Authorization: Bearer ${{ secrets.PINATA_JWT }}" \
             "https://api.pinata.cloud/pinning/pinFileToIPFS")
           
-          # Extraer el CID (IpfsHash) del JSON de respuesta
+          echo "Respuesta de Pinata: $RESPONSE"
+          
           CID=$(echo $RESPONSE | jq -r '.IpfsHash')
           
           if [ "$CID" = "null" ] || [ -z "$CID" ]; then
-            echo "❌ Error al subir. Respuesta de Pinata: $RESPONSE"
+            echo "❌ ERROR: No se pudo obtener el CID. Revisa tu JWT o permisos en Pinata."
             exit 1
           fi
           
-          echo "✅ ¡Éxito! CID obtenido: $CID"
+          echo "✅ ¡Éxito! CID: $CID"
           echo "CID=$CID" >> $GITHUB_OUTPUT
 
-      - name: Mostrar URL Pública
+      - name: Mostrar Resultado
         run: |
-          echo "🚀 Tu portfolio Web3 está disponible en:"
+          echo "🚀 TU WEB ESTÁ ONLINE EN:"
           echo "https://gateway.mypinata.cloud/ipfs/${{ steps.upload.outputs.CID }}"
-          echo "O usa tu dominio .eth/.crypto cuando lo configures."   
